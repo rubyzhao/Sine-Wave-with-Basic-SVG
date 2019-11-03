@@ -1,4 +1,4 @@
-## Manually performace test results using performance.getEntries() from console of Chrome
+## Manually performace test results using performance.getEntries() from console of Chrome for SVG_Sin.html
 
 This is further investigation for [Big different window.performance.timing results for repeat test on the same page](https://github.com/GoogleChrome/puppeteer/issues/5110)
 
