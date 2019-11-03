@@ -2,6 +2,18 @@
 
 This is further investigation for [Big different window.performance.timing results for repeat test on the same page](https://github.com/GoogleChrome/puppeteer/issues/5110)
 
+Last time, with the simplest server:
+```
+var http = require('http');
+
+var server = http.createServer(function(req, res) {
+    res.writeHead(200);
+    res.end('Hi everybody!');
+});
+server.listen(8080);
+```
+This time, open [SVG_Sin.html](https://github.com/rubyzhao/Sine-Wave-with-basic-SVG/blob/master/SVG_Sin.html) with live server. [^1] 
+
 For each **Loop**=20,200 and 2000, refresh the website http://127.0.0.1:5500/SVG_Sin.html, run JSON.stringify(performance.getEntries()) and save as the result in the conslole a few times. 
 
 The below is part of performance result for Loop=20:
@@ -31,8 +43,8 @@ NAV_duration | NAV_connectEnd | NAV_responseEnd | NAV_domContentLoadedEventEnd |
 
 The variance is big. For example, NAV_domComplete=140.3 at Loop=20 is even higher than 137.7 and 134.5 in Loop=200.
 
-### Environment ###
-- Live Server: v5.6.1
+**Tell us about your environment:**
+- [^1]: Live Server: v5.6.1
 - Chrome: Version 78.0.3904.87 (Official Build) (64-bit)
 - Windows: W10X64 1803
 - Node.js version: v12.11.1
